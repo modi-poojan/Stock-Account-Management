@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Account {
 
-	int current_balance = 0;
+	static int current_balance = 0;
 	static Scanner scan = new Scanner(System.in);
 	
-	public void debit() {
+	public static void debit(double debit_balance) {
 		
 		System.out.println("Enter the amount you want to debit");
 		int withdraw_amount = scan.nextInt();
@@ -22,13 +22,22 @@ public class Account {
 		}
 	}
 		
-	public void credit() {
+	public static void credit(double credit_balance) {
 		
 		System.out.println("Enter the amount you want to credit");
 		int deposit_amount = scan.nextInt();
 		System.out.println("Current account balance before crediting = "+current_balance );
 		current_balance += deposit_amount; 
 		System.out.println("Current account balance after crediting = "+current_balance );
+	}
+
+	public int getCurrent_balance() {
+		return current_balance;
+	}
+
+	@SuppressWarnings("static-access")
+	public void setCurrent_balance(int current_balance) {
+		this.current_balance = current_balance;
 	}
 		
 		

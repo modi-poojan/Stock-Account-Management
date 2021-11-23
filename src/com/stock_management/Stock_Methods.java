@@ -7,7 +7,7 @@ public class Stock_Methods {
 	static ArrayList<Stock_Portfolio> portfolio = new ArrayList<>();
 	static Scanner scan = new Scanner(System.in);
 	
-	public ArrayList<Stock_Portfolio> getPortfolio() {
+	static public ArrayList<Stock_Portfolio> getPortfolio() {
 		return portfolio;
 	}
 
@@ -15,10 +15,20 @@ public class Stock_Methods {
 	public void setPortfolio(ArrayList<Stock_Portfolio> portfolio) {
 		 this.portfolio = portfolio;
 	}
+	
+	
+	public void enterNumOfStocks() {
+		System.out.println("Enter how many stock you want :- ");
+		int userChoice = scan.nextInt();
+		
+		for(int i = 0; i < userChoice; i++) {
+			buy_stocks();
+		}
+	}
 
 
 
-	public void buy() {
+	public static void buy_stocks() {
 	
 		System.out.println("Enter name of the stock");
 		String stock_name = scan.next();
